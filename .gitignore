@@ -263,4 +263,16 @@ poetry.toml
 # LSP config files
 pyrightconfig.json
 
+settings.py
+settings.py-e
+settings.py-e.orig
+settings.py.orig
+settings.pyc
+settings.py.bak
+settings.py.swp
+settings.py~
+settings.pyc
+settings.py.save
+settings.py.save.1
+
 # End of https://www.toptal.com/developers/gitignore/api/python,django
