@@ -73,11 +73,15 @@ DATABASES = {
     # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': str(os.getenv('DB_NAME')),
-        'USER': str(os.getenv('DB_USER')),
-        'PASSWORD': str(os.getenv('DB_PASSWORD')),
-        'HOST': str(os.getenv('DB_HOST')),
-        'PORT': str(os.getenv('DB_PORT')),
+        "OPTIONS": {
+            'service': 'db_escolar',
+        },
+#       'NAME': str(os.getenv('DB_NAME')),
+#       'USER': str(os.getenv('DB_USER')),
+#       'PASSWORD': str(os.getenv('DB_PASSWORD')),
+#       'HOST': str(os.getenv('DB_HOST')),
+#       'PORT': str(os.getenv('DB_PORT')),
+#       'passfile':'.my_pgpass',
     }
 }
 
