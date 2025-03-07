@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core.validators import MaxValueValidator, MinValueValidator
 '''
 Id
 Nome
@@ -12,7 +12,7 @@ Número de Celular(Máximo de 14 caracteres)
 class Estudante(models.Model):
     nome = models.CharField(max_length=255)
     email = models.EmailField(blank=False, max_length=30)
-    cpf = models.CharField(max_length=11)
+    cpf = models.CharField(max_length=11, unique=True)
     data_nascimento = models.DateField()
     numero_celular = models.CharField(max_length=14)
 
@@ -30,7 +30,7 @@ Nível (Básico, Intermediário e Avançado):
     Por padrão deve ser Básico
 '''
 class Curso(models.Model):
-    codigo = models.CharField(max_length=10)
+    codigo = models.CharField( unique=True, validators=[MinValueValidator(3), MaxValueValidator(10)])
     descricao = models.TextField(blank=False)
     nivel = models.CharField(
         blank=False,
